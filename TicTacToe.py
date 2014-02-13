@@ -4,6 +4,7 @@ from tkFont import Font
 from copy import deepcopy
 from random import randint
 
+
 class Board:
 
     """
@@ -19,7 +20,7 @@ class Board:
         self.opponent = 'O'
         self.empty = ' '
         self.size = 3
-        self.fields = hashabledict()
+        self.fields = HashableDict()
         for y in range(self.size):
             for x in range(self.size):
                 self.fields[x, y] = self.empty
@@ -102,7 +103,6 @@ class Board:
         move = self.__negamax(alpha, beta, tt=DictTT())
         return move[1]
 
-
     def __negamax(self, alpha, beta, tt=None):
         """
         This is where the magic happens.  First check for leaf node
@@ -159,7 +159,7 @@ class Board:
         return self.fields
 
 
-class hashabledict(dict):
+class HashableDict(dict):
     def __hash__(self):
         return hash(tuple(sorted(self.items())))
 
