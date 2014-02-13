@@ -3,7 +3,6 @@ from Tkinter import Tk, Button
 from tkFont import Font
 from copy import deepcopy
 from random import randint
-import pickle
 
 class Board:
 
